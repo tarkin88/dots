@@ -1,0 +1,115 @@
+{
+  // suggestions
+  // "suggest.echodocSupport": true,
+  // TODO add more labels and give them cool glyphs
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+  "suggest.enablePreview": true,
+  "suggest.timeout": 800,
+  "suggest.floatEnable": true,
+  "suggest.maxPreviewWidth": 100,
+
+  // diagnostics
+  "diagnostic.enableSign": true,
+  "diagnostic.format": "[%severity] %message [%source%code] ",
+  "diagnostic.errorSign": "✗ ",
+  "diagnostic.warningSign": "▲ ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.hintSign": " ",
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.refreshOnInsertMode": true,
+  // "diagnostic.displayByAle": true,
+  // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
+
+  // codelens TODO what does this get me?
+  // "codeLens.enable": true,
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
+  // python config
+  "python.jediEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.formatting.provider": "yapf",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportGeneralTypeIssues": "none"
+  },
+  "python.analysis.typeCheckingMode": "off",
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "vue"
+  ],
+
+  "bookmark.sign": " ",
+  // snippets
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snips"],
+  //"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+
+  // emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+
+  // explorer
+  "explorer.toggle": true,
+  "explorer.quitOnOpen": true,
+  "explorer.position": "left",
+  "explorer.focus": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.column.git.icon.added": "+",
+  "explorer.file.column.git.icon.modified": "±",
+  "explorer.file.column.git.icon.deleted": "x",
+  "explorer.file.column.git.icon.untracked": "?",
+  "explorer.file.column.git.icon.renamed": "->",
+  "explorer.width": 45,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "t": "open:tab",
+    "v": "open:vsplit"
+  },
+
+  //coc-emoji
+  "coc.source.emoji.filetypes": ["markdown"],
+
+  "coc.source.around.enable": true,
+
+  "html.enable": true,
+  "html.filetypes": ["html", "handlebars", "django", "htmldjango"],
+  "html.format.enable": true
+
+  // TODO b:coc_suggest_disable=1 GOYO
+  // TODO add to paths.vim g:coc_node_path
+}

@@ -1,0 +1,84 @@
+#!/bin/sh
+
+## Get colors from .Xresources -------------------------------#
+xrdb ~/.Xresources
+getcolors () {
+	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+}
+getcolors
+
+bg=$(xrdb ~/.config/X11/xresources -query all | grep background | awk '{print $2}')
+
+# - - - - - - - - -  MONITORS  - - - - - - - - -
+PRIMARY="DVI-D-0"
+SECONDARY="HDMI-0"
+EXTRA="DVI-D-1"
+bspc monitor $PRIMARY -d 1 2 3
+bspc monitor $SECONDARY -d 4 5 6
+bspc monitor $EXTRA -d 7 8 9
+bspc wm -O $PRIMARY $SECONDARY $EXTRA
+
+# - - - - - - - - -  BSPWM - - - - - - - - -
+
+bspc config focused_border_color "$BLUE"
+bspc config normal_border_color "$BACKGROUND"
+bspc config active_border_color "$MAGENTA"
+bspc config presel_feedback_color "$GREEN"
+
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config paddingless_monocle true
+bspc config single_monocle false
+bspc config focus_follows_pointer true
+
+
+
+bspc config focused_border_color   "#74838c"
+bspc config normal_border_color     "$bg"
+bspc config border_width            2
+bspc config window_gap              12
+bspc config focus_follows_pointer   true
+bspc config top_padding             26
+bspc config split_ratio             0.50
+bspc config borderless_monocle      true
+bspc config gapless_monocle         false
+bspc config single_monocle          true
+bspc config pointer_follows_monitor true
+bspc config pointer_follows_focus true
+bspc config remove_disabled_monitor true
+bspc config remove_unplugged_monitor true
+bspc config merge_overlapping_monitors true
+floating_noborder
+# - - - - - - - - -  RULES - - - - - - - - -
+bspc rule -a Google Chrome    desktop=2 focus=on
+bspc rule -a Slack            desktop=4
+bspc rule -a Chromium         desktop=2
+bspc rule -a Vlc              desktop=6
+bspc rule -a Lxappearance state=floating follow=on
+
+# - - - - - - - - -  AUTOSTART - - - - - - - - -
+xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 1920x0 --rotate normal \
+  --output HDMI-0 --mode 1920x1080 --pos 0x511 --rotate normal \
+  --output DVI-D-1 --mode 1920x1080 --pos 5360x560 --rotate normal &
+setxkbmap "us(alt-intl)" &
+picom --config ~/.config/picom/picom.conf &
+betterlockscreen -w &
+greenclip daemon &
+numlockx on &
+start-pulseaudio-x11&
+sleep 1s;$HOME/.bin/launch_polybar.sh &
+sleep 1s; redshift -l "20.671955:-103.416504" -t 7700:4700 -g 0.8 -m vidmode &
+sleep 2s; dunst &
+sleep 3s; [ ! -s ~/.config/mpd/pid ] && mpd &
+sleep 3s; /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+sleep 4s; udiskie -aT &
+sleep 8s; xautolock -time 18 -locker 'betterlockscreen --lock dimblur' -notify 19 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'" &

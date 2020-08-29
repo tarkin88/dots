@@ -1,0 +1,105 @@
+font:
+  size: 13.9
+  normal:
+    family: Iosevka Term
+    # family: Inconsolata LGC
+    # family: FiraCode Nerd Font
+    # family: Iosevka Nerd Font
+  # bold:
+  #   family: Iosevka Nerd Font
+  # italic:
+  #   family: Iosevka Nerd Font
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+
+  padding:
+    x: 5
+    y: 5
+schemes:
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+env:
+  TERM: xterm-256color
+# colors:
+colors: *tokyo-night-storm
+  # primary:
+  #   background: "0x2b2d3a"
+  #   foreground: "0xe1e3e4"
+
+  # normal:
+  #   black: "0x181a1c"
+  #   red: "0xfb617e"
+  #   green: "0x9ed06c"
+  #   yellow: "0xedc763"
+  #   blue: "0x6dcae8"
+  #   magenta: "0xbb97ee"
+  #   cyan: "0xf89860"
+  #   white: "0xe1e3e4"
+
+  # bright:
+  #   black: "#666666"
+  #   # black: "0x181a1c"
+  #   red: "0xfb617e"
+  #   green: "0x9ed06c"
+  #   yellow: "0xedc763"
+  #   blue: "0x6dcae8"
+  #   magenta: "0xbb97ee"
+  #   cyan: "0xf89860"
+  #   white: "0xe1e3e4"
+scrolling:
+  history: 30000

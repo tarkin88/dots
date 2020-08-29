@@ -1,0 +1,4 @@
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/base.ini
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/bars.ini

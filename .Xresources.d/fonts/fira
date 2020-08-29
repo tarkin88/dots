@@ -1,0 +1,11 @@
+! ------------------------------------------------------------------------------
+! Fonts
+! ------------------------------------------------------------------------------
+! font spacing
+!URxvt*letterSpace:		1
+!URxvt.lineSpace:		0
+
+URxvt.font: xft:FiraCode Nerd Font:regular:size=15
+!URxvt.boldFont: xft:Fira Code:bold:size=15
+!URxvt.italicFont: xft:Fira Code:italic:size=15
+!URxvt.boldItalicfont: xft:Fira Code:boldItalic:size=15

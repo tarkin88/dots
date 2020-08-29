@@ -1,0 +1,66 @@
+#!/bin/sh
+# .xprofile
+XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME
+
+# include ~/bin in path
+export PATH=$HOME/.bin:$PATH
+
+# include sbin in PATH
+if [ -d "/sbin" ] ; then
+    PATH="/sbin:$PATH"
+fi
+if [ -d "/usr/sbin" ] ; then
+    PATH="/usr/sbin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
+# if [ -d "$HOME/.envs/neovim/bin" ] ; then
+    # PATH="$HOME/.envs/neovim/bin:$PATH"
+# fi
+
+if [ -d "$HOME/.yarn/bin" ] ; then
+    PATH="$HOME/.yarn/bin/:$PATH"
+fi
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+
+# More explanation here
+# https://github.com/PCMan/gtk3-nocsd
+# You can use gtk3-mushrooms btw
+export GTK_CSD=0
+
+# Editor and shits
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+# FILE BROWSER
+export BROWSER="opera"
+
+# TERM
+export TERM=rxvt-unicode-256color
+
+# Enable hidden scrollbars if using  gtk3-mushrooms
+export GTK_OVERLAY_SCROLLING=1
+
+RANGER_LOAD_DEFAULT_RC=FALSE
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Don't minimize SDL games on focus loss
+export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
+
+xset s off && xset -dpms
+#xset b off
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
