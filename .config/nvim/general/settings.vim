@@ -46,6 +46,7 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set autochdir                           " Your working directory will always be the same as your working directory
   " set foldcolumn=2                        " Folding abilities
   set colorcolumn=120
+  set inccommand=nosplit
 
   " Providers
   let g:python3_host_prog  = '~/.envs/neovim/bin/python'

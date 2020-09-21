@@ -15,7 +15,7 @@ let g:airline_section_c = airline#section#create([''])
 let g:airline_section_z = airline#section#create(['linenr'])
 
 " Switch to your current theme
-let g:airline_theme = 'forest_night'
+let g:airline_theme = 'sonokai'
 " Always show tabs
 set showtabline=2
 " We don't need to see things like -- INSERT -- anymore

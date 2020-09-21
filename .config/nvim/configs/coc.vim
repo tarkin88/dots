@@ -6,6 +6,8 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-diagnostic',
     \ 'coc-docker',
+    \ 'coc-emmet',
+    \ 'coc-emoji',
     \ 'coc-eslint',
     \ 'coc-explorer',
     \ 'coc-highlight',
@@ -15,19 +17,14 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-neosnippet',
     \ 'coc-pairs',
-    \ 'coc-prettier',
+    \ 'coc-pyright',
     \ 'coc-python',
     \ 'coc-sh',
     \ 'coc-snippets',
     \ 'coc-tag',
     \ 'coc-utils',
-    \ 'coc-vetur',
-    \ 'coc-prettier',
-    \ 'coc-emmet',
     \ 'coc-vimlsp',
-    \ 'coc-emoji',
     \ 'coc-yaml',
-    \ 'coc-pyright',
     \ 'coc-yank',
     \ ]
 
@@ -198,3 +195,5 @@ nnoremap <silent><F7> :<C-u>CocList commands<cr>
 
 nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

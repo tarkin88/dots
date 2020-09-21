@@ -11,7 +11,9 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/plugins.vim
 
 " Theme
-source $HOME/.config/nvim/themes/forestnight.vim
+source $HOME/.config/nvim/themes/sonokai.vim
+" source $HOME/.config/nvim/themes/forestnight.vim
+" source $HOME/.config/nvim/themes/rigel.vim
 source $HOME/.config/nvim/themes/airline.vim
 
 " Configs

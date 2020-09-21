@@ -62,23 +62,20 @@ bspc config merge_overlapping_monitors true
 # - - - - - - - - -  RULES - - - - - - - - -
 # remove all rules first
 bspc rule -r *:*
-bspc rule -a Opera desktop=2 follow=on focus=on
-bspc rule -a opera desktop=2 follow=on focus=on
+bspc rule -a Chromium desktop=2 follow=on focus=on
+bspc rule -a chromium desktop=2 follow=on focus=on
 bspc rule -a Slack            desktop=5
-bspc rule -a Telegram-Desktop desktop=5
-bspc rule -a Telegram         desktop=5
-bspc rule -a telegram         desktop=5
 bspc rule -a Vlc              desktop=6
 bspc rule -a Lxappearance     state=floating follow=on
 bspc rule -a Pavucontrol      state=floating follow=on
 bspc rule -a Nitrogen         state=floating follow=on
-bspc rule -a Blueberry        state=floating follow=on
+bspc rule -a blueberry        state=floating follow=on
 bspc rule -a Arandr           state=floating follow=on
 bspc rule -a Pcmanfm          state=floating follow=on
 
 # - - - - - - - - -  AUTOSTART - - - - - - - - -
-xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 1080x91 --rotate normal \
-  --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate right &
+xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 0x0 --rotate normal \
+  --output DVI-D-1 --mode 1920x1080 --pos 3440x0 --rotate left
 
 # Kill if already running
 killall -9 sxhkd \
@@ -101,7 +98,7 @@ xsetroot -cursor_name left_ptr
 
 sxhkd &
 setxkbmap "us(alt-intl)" &
-nitrogen --restore &
+betterlockscreen -w &
 picom --experimental-backends --config ~/.config/picom/picom.conf &
 greenclip daemon &
 numlockx on &
@@ -111,5 +108,6 @@ sleep 1s; $HOME/.bin/launch_polybar.sh &
 sleep 2s; redshift -c ~/.config/redshift.conf &
 sleep 3s; [ ! -s ~/.config/mpd/pid ] && mpd &
 sleep 4s; udiskie -aT &
-sleep 8s; xautolock -time 20 -locker 'systemctl suspend' -notify 18 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'" &
-
+sleep 4s; /usr/lib/kdeconnectd &
+# sleep 8s; xautolock -time 20 -locker 'systemctl suspend' -notify 18 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'" &
+sleep 8s; xidlehook --not-when-fullscreen --not-when-audio --timer  1200 'betterlockscreen -s' '' &

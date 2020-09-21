@@ -12,8 +12,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
   Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
   Plug 'sainnhe/forest-night'
-  " Plug 'ghifarit53/tokyonight-vim'
+  Plug 'sainnhe/sonokai'
+
+  " Plug 'Rigellute/rigel'
   " Plug 'franbach/miramare'
+
+  " Plug 'ghifarit53/tokyonight-vim'
 " ---------------------------------------
 "            General stuff
 " ---------------------------------------

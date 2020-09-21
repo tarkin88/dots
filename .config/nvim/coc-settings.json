@@ -29,20 +29,21 @@
   // list
   "list.indicator": ">",
   "list.selectedSignText": " ",
-
+  "prettier.eslintIntegration": true,
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
-    "markdown",
-    "javascript",
     "graphql",
     "html",
-    "yaml",
+    "javascript",
     "json",
+    "json",
+    "markdown",
     "python",
     "typescript",
     "typescriptreact",
-    "json"
+    "yaml",
+    "vue"
   ],
   "coc.preferences.hoverTarget": "float",
 
