@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'unblevable/quick-scope'
   Plug 'JamshedVesuna/vim-markdown-preview'
+  Plug 'Kachyz/vim-gitmoji'
   " ---------------------------------------
   "            Code Quality
   " ---------------------------------------
