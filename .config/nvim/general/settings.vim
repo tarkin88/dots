@@ -44,7 +44,6 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set scrolloff=5                         " Display at least 3 lines around you cursor
 
   set autochdir                           " Your working directory will always be the same as your working directory
-  " set foldcolumn=2                        " Folding abilities
   set colorcolumn=120
   set inccommand=nosplit
 
@@ -55,4 +54,3 @@ set formatoptions-=cro                  " Stop newline continution of comments
 
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-

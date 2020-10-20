@@ -10,14 +10,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
 "            Colors
 " ---------------------------------------
-  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
   Plug 'sainnhe/forest-night'
   Plug 'sainnhe/sonokai'
-
-  " Plug 'Rigellute/rigel'
-  " Plug 'franbach/miramare'
-
-  " Plug 'ghifarit53/tokyonight-vim'
 " ---------------------------------------
 "            General stuff
 " ---------------------------------------
@@ -36,22 +31,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "            Code Quality
   " ---------------------------------------
   Plug 'Shougo/neosnippet-snippets'
+  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'Shougo/neosnippet.vim'
-  " Plug 'dense-analysis/ale'
   Plug 'honza/vim-snippets'
-  Plug 'kkoomen/vim-doge'
+  Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'sheerun/vim-polyglot'
   Plug 'tmhedberg/SimpylFold'
   Plug 'tpope/vim-commentary'
   " ---------------------------------------
-  "            Git
-  " ---------------------------------------
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
-  " ---------------------------------------
   "            Navigation
   " ---------------------------------------
+  Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'airblade/vim-rooter'
   Plug 'ap/vim-buftabline'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }

@@ -12,6 +12,7 @@ source $HOME/.config/nvim/plugins.vim
 
 " Theme
 source $HOME/.config/nvim/themes/sonokai.vim
+" source $HOME/.config/nvim/themes/forestnight.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/themes/highlightyank.vim
 
@@ -21,18 +22,13 @@ source $HOME/.config/nvim/configs/carbon.vim
 source $HOME/.config/nvim/configs/coc.vim
 source $HOME/.config/nvim/configs/commentary.vim
 source $HOME/.config/nvim/configs/doge.vim
-source $HOME/.config/nvim/configs/fugitive.vim
 source $HOME/.config/nvim/configs/fzf.vim
-source $HOME/.config/nvim/configs/gitgutter.vim
 source $HOME/.config/nvim/configs/gitmoji.vim
 source $HOME/.config/nvim/configs/gutentags.vim
 source $HOME/.config/nvim/configs/incsearch.vim
-source $HOME/.config/nvim/configs/polyglot.vim
+source $HOME/.config/nvim/configs/nerdtree.vim
 source $HOME/.config/nvim/configs/quickscope.vim
 source $HOME/.config/nvim/configs/rooter.vim
+source $HOME/.config/nvim/configs/treesitter.vim
 source $HOME/.config/nvim/configs/undotree.vim
 source $HOME/.config/nvim/configs/vista.vim
-
-" if !empty(glob("./paths.vim"))
-"   source $HOME/.config/nvim/paths.vim
-" endif

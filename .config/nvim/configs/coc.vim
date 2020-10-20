@@ -9,9 +9,10 @@ let g:coc_global_extensions = [
     \ 'coc-emmet',
     \ 'coc-emoji',
     \ 'coc-eslint',
-    \ 'coc-explorer',
+    \ 'coc-git',
     \ 'coc-highlight',
     \ 'coc-html',
+    \ 'coc-jest',
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-marketplace',
@@ -110,62 +111,62 @@ nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer." Explorer
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 30,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 30,
-\   },
-\   'simplify': {
-\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
-"nmap <silent> <space>e :CocCommand explorer<CR>
-" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"let g:coc_explorer_global_presets = {
+"\   'floating': {
+"\      'position': 'floating',
+"\   },
+"\   'floatingLeftside': {
+"\      'position': 'floating',
+"\      'floating-position': 'left-center',
+"\      'floating-width': 30,
+"\   },
+"\   'floatingRightside': {
+"\      'position': 'floating',
+"\      'floating-position': 'right-center',
+"\      'floating-width': 30,
+"\   },
+"\   'simplify': {
+"\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+"\   }
+"\ }
+""nmap <silent> <space>e :CocCommand explorer<CR>
+"" nnoremap <silent> <leader>e :CocCommand explorer<CR>
+"" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+" command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 
-" Explorer
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 30,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 30,
-\   },
-\   'simplify': {
-\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
-"nmap <silent> <space>e :CocCommand explorer<CR>
-" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"" Explorer
+"let g:coc_explorer_global_presets = {
+"\   'floating': {
+"\      'position': 'floating',
+"\   },
+"\   'floatingLeftside': {
+"\      'position': 'floating',
+"\      'floating-position': 'left-center',
+"\      'floating-width': 30,
+"\   },
+"\   'floatingRightside': {
+"\      'position': 'floating',
+"\      'floating-position': 'right-center',
+"\      'floating-width': 30,
+"\   },
+"\   'simplify': {
+"\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+"\   }
+"\ }
+""nmap <silent> <space>e :CocCommand explorer<CR>
+"" nnoremap <silent> <leader>e :CocCommand explorer<CR>
+"" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-nmap <silent><F2> :CocCommand explorer<CR>
+"nmap <silent><F2> :CocCommand explorer<CR>
 
 " Example configuration
 nmap <silent><F9> <Plug>(coc-bookmark-toggle)
