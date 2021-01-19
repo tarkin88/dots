@@ -1,6 +1,6 @@
 nnoremap <M-f> :Rg<CR>
 nnoremap <M-t> :Tags<CR>
-nnoremap <M-c> :BCommits<CR>
+nnoremap <M-m> :Marks<CR>
 
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 nnoremap <silent> <C-p> :Files<CR>
@@ -8,27 +8,19 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 
 " Open files in vertical horizontal split
-nnoremap <silent><M-v> :call fzf#run({
+nnoremap <silent><A-v> :call fzf#run({
 \   'right': winwidth('.') / 2,
 \   'sink':  'vertical botright split' })<CR>
 
 nnoremap <silent><A-k> :Rg <C-R><C-W><space><CR>
 
+
+nnoremap <silent><A-h> :call fzf#run({
+\   'right': winwidth('.') / 2,
+\   'sink':  'botright split' })<CR>
+
 let $FZF_DEFAULT_COMMAND="rg --line-number --no-heading --smart-case --files --hidden --glob '!.git/**' -g '!{node_modules,.git,autoload}'"
 
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(blue)%C(bold)%cr"'
-let g:fzf_tags_command = 'ctags -R'
-
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
-
-" " Automatically open FZF if no file is select
-" autocmd VimEnter    * nested call s:on_vimenter()
-
-" function! s:on_vimenter()
-"   if !argc() && line2byte('$') == -1
-"       :Files
-"   endif
-" endfunction
 
 if has('nvim') && exists("*nvim_open_win")
     " fix hideous sign column
@@ -45,12 +37,12 @@ if has('nvim') && exists("*nvim_open_win")
 
         let height = 10
         if &lines > 10
-            let height = float2nr(&lines * 0.35) " 35%
+            let height = float2nr(&lines * 0.4) " 40%
         endif
 
         let width = 80
         if &columns > 110
-            let width = float2nr(&columns * 0.80) " 80%
+            let width = float2nr(&columns * 0.6) " 60%
         endif
 
         let horizontal = float2nr((&columns - width) / 2)

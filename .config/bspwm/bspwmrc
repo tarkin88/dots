@@ -3,7 +3,8 @@
 ## Variables -------------------------------#
 PRIMARY="DVI-D-0"
 EXTRA="DVI-D-1"
-# SECONDARY="HDMI-0"
+# EXTRA="HDMI-0"
+# SECONDARY="DVI-D-1"
 
 ## Get colors from .Xresources -------------------------------#
 xrdb ~/.Xresources
@@ -24,9 +25,8 @@ getcolors
 
 # - - - - - - - - -  MONITORS  - - - - - - - - -
 bspc monitor $PRIMARY -d 1 2 3 4
+# bspc monitor $SECONDARY -d 4 5 6
 bspc monitor $EXTRA -d 5 6 7 8
-# bspc monitor $EXTRA -d 7 8 9
-# bspc wm -O $PRIMARY $SECONDARY $EXTRA
 bspc wm -O $PRIMARY $EXTRA
 
 # - - - - - - - - -  BSPWM - - - - - - - - -
@@ -42,7 +42,7 @@ bspc config single_monocle true
 bspc config focus_follows_pointer true
 
 bspc config border_width            3
-bspc config window_gap              8
+bspc config window_gap              10
 
 bspc config top_padding 28
 bspc config right_padding 0
@@ -64,18 +64,25 @@ bspc config merge_overlapping_monitors true
 bspc rule -r *:*
 bspc rule -a Chromium desktop=2 follow=on focus=on
 bspc rule -a chromium desktop=2 follow=on focus=on
-bspc rule -a Slack            desktop=5
-bspc rule -a Vlc              desktop=6
+bspc rule -a Slack            		desktop=5
+bspc rule -a Spotify              desktop=6
+bspc rule -a Zoom                 desktop=4
 bspc rule -a Lxappearance     state=floating follow=on
 bspc rule -a Pavucontrol      state=floating follow=on
 bspc rule -a Nitrogen         state=floating follow=on
-bspc rule -a blueberry        state=floating follow=on
+bspc rule -a Blueberry        state=floating follow=on
+bspc rule -a Bluetooth        state=floating follow=on
 bspc rule -a Arandr           state=floating follow=on
-bspc rule -a Pcmanfm          state=floating follow=on
 
 # - - - - - - - - -  AUTOSTART - - - - - - - - -
+
+#xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 1080x126 --rotate normal --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate right 
+# xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 1920x0 --rotate normal --output DVI-D-1 --mode 1920x1080 --pos 0x427 --rotate normal
+
+# xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 0x43 --rotate normal \
+# 	--output DVI-D-1 --mode 1920x1080 --pos 3440x0 --rotate left
 xrandr --output DVI-D-0 --primary --mode 3440x1440 --pos 0x0 --rotate normal \
-  --output DVI-D-1 --mode 1920x1080 --pos 3440x0 --rotate left
+	--output DVI-D-1 --mode 1920x1080 --pos 3440x453 --rotate normal
 
 # Kill if already running
 killall -9 sxhkd \
@@ -84,8 +91,7 @@ killall -9 sxhkd \
   redshift \
   picom \
   udiskie \
-  greenclip \
-  mpd
+  greenclip
 
 # Lauch notification daemon
 dunst \
@@ -104,10 +110,12 @@ greenclip daemon &
 numlockx on &
 start-pulseaudio-x11 &
 
-sleep 1s; $HOME/.bin/launch_polybar.sh &
+# sleep 9s; nvidia-settings --assign CurrentMetaMode="DY-4: vidia-auto-select @1080x1920 +3440+0 {ViewPortIn=1080x1920, ViewPortOut=1920x1080+0+0, Rotation=90,
+#   ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-0: vidia-auto-select @3440x1440 +0+85 {ViewPortIn=3440x1440, ViewPortOut=3440x1440+0+0,
+#   ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}" &
+
+$HOME/.bin/launch_polybar.sh &
 sleep 2s; redshift -c ~/.config/redshift.conf &
-sleep 3s; [ ! -s ~/.config/mpd/pid ] && mpd &
-sleep 4s; udiskie -aT &
-sleep 4s; /usr/lib/kdeconnectd &
-# sleep 8s; xautolock -time 20 -locker 'systemctl suspend' -notify 18 -notifier "notify-send -u normal -t 10000 -- 'LOCKING screen'" &
+# sleep 3s; [ ! -s ~/.config/mpd/pid ] && mpd &
 sleep 8s; xidlehook --not-when-fullscreen --not-when-audio --timer  1200 'betterlockscreen -s' '' &
+sleep 14s; udiskie -aT &

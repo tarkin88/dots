@@ -20,16 +20,17 @@
   "diagnostic.hintSign": " ",
   "diagnostic.enableHighlightLineNumber": true,
   "diagnostic.refreshOnInsertMode": true,
-  "diagnostic.virtualText": true, // this won't work with codelens when error on same line
+  // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
   // codelens TODO what does this get me?
-  "codeLens.enable": true,
+  // "codeLens.enable": true,
   // list
   "list.indicator": ">",
   "list.selectedSignText": " ",
-  "prettier.eslintIntegration": true,
+  // "prettier.eslintIntegration": true,
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "elixir",
     "graphql",
     "html",
     "javascript",
@@ -44,12 +45,19 @@
   ],
   "coc.preferences.hoverTarget": "float",
   // python config
-  "python.jediEnabled": true,
+  //"python.jediEnabled": true,
+  //"python.jediMemoryLimit": -1,
+  //"python.sortImports.path": "~/.local/bin/isort",
+  //"python.jediPath": "~/.local/lib/python3.8/site-packages/jedi",
   "python.linting.enabled": true,
-  "python.jediPath": "~/.envs/neovim/lib/python3.8/site-packages/jedi",
   "python.linting.prospectorEnabled": true,
+  "python.linting.prospectorPath": "~/.envs/neovim/bin/prospector",
+  "python.linting.prospectorArgs": [
+    "--uses django"
+  ],
   "python.linting.pylintEnabled": false,
   "python.formatting.provider": "yapf",
+  "python.formatting.yapfPath": "~/.envs/neovim/bin/yapf",
   "python.analysis.diagnosticSeverityOverrides": {
     "reportGeneralTypeIssues": "none"
   },
@@ -62,7 +70,6 @@
     "javascriptreact",
     "vue"
   ],
-  "bookmark.sign": " ",
   // snippets
   "snippets.ultisnips.directories": [
     "UltiSnips",
@@ -74,10 +81,6 @@
     "vue-html": "html",
     "javascript": "javascriptreact"
   },
-  //coc-emoji
-  "coc.source.emoji.filetypes": [
-    "markdown"
-  ],
   "coc.source.around.enable": true,
   "html.enable": true,
   "html.filetypes": [
@@ -89,5 +92,9 @@
   "html.format.enable": true,
   "git.addGBlameToVirtualText": true,
   "git.showCommitInFloating": true,
-  "git.addGBlameToBufferVar": true
+  "git.addGBlameToBufferVar": true,
+  "git.addedSign.text": "▎",
+  "git.changedSign.text": "▎",
+  "git.topRemovedSign.text": "契",
+  "git.removedSign.text": "契"
 }

@@ -10,44 +10,42 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
 "            Colors
 " ---------------------------------------
-  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-  Plug 'ghifarit53/daycula-vim' , {'branch' : 'main'}
-  " Plug 'sainnhe/forest-night'
-  " Plug 'sainnhe/sonokai'
-  " Plug 'sainnhe/edge'
+  " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  Plug 'sainnhe/sonokai'
 " ---------------------------------------
 "            General stuff
 " ---------------------------------------
-  Plug 'easymotion/vim-easymotion'
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'haya14busa/incsearch.vim'
   Plug 'kristijanhusak/vim-carbon-now-sh'
+  Plug 'machakann/vim-highlightedyank'
   Plug 'vim-airline/vim-airline'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  Plug 'wfxr/minimap.vim'
+  " Plug 'ntpeters/vim-better-whitespace'
 
   " ---------------------------------------
   "            Code Quality
   " ---------------------------------------
   Plug 'Shougo/neosnippet-snippets'
+  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'Shougo/neosnippet.vim'
   Plug 'honza/vim-snippets'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'sheerun/vim-polyglot'
-  Plug 'tmhedberg/SimpylFold'
   Plug 'tpope/vim-commentary'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'nvim-lua/diagnostic-nvim'
+  Plug 'mhartington/formatter.nvim'
+
   " ---------------------------------------
   "            Navigation
   " ---------------------------------------
-  Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'airblade/vim-rooter'
   Plug 'ap/vim-buftabline'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
   Plug 'junegunn/fzf.vim'
   Plug 'ludovicchabant/vim-gutentags'
+  Plug 'mbbill/undotree', { 'on': [ 'UndotreeToggle' ] }
   Plug 'ryanoasis/vim-devicons'
-  Plug 'kkoomen/vim-doge'
-
-
 call plug#end()
 
 " Automatically install missing plugins on startup

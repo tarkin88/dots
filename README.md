@@ -1,5 +1,5 @@
 # dots
 
 * **WM**: *bspwm*
-* **Editor**: *neovom*
+* **Editor**: *neovim*
 * **Panel**: *polybar* 

@@ -1,4 +1,4 @@
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = [ 'coc']
 
 let g:airline#extensions#coc#enabled = 1
 
@@ -15,7 +15,7 @@ let g:airline_section_c = airline#section#create([''])
 let g:airline_section_z = airline#section#create(['linenr'])
 
 " Switch to your current theme
-let g:airline_theme = 'sonokai'
+let g:airline_theme = 'daycula'
 " Always show tabs
  set showtabline=2
 " We don't need to see things like -- INSERT -- anymore
