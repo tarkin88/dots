@@ -10,32 +10,28 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
 "            Colors
 " ---------------------------------------
-  " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-  Plug 'sainnhe/forest-night'
-  Plug 'sainnhe/sonokai'
+  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  Plug 'ghifarit53/daycula-vim' , {'branch' : 'main'}
+  " Plug 'sainnhe/forest-night'
+  " Plug 'sainnhe/sonokai'
+  " Plug 'sainnhe/edge'
 " ---------------------------------------
 "            General stuff
 " ---------------------------------------
   Plug 'easymotion/vim-easymotion'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'haya14busa/incsearch.vim'
   Plug 'kristijanhusak/vim-carbon-now-sh'
-  Plug 'machakann/vim-highlightedyank'
-  Plug 'ntpeters/vim-better-whitespace'
-  Plug 'wellle/targets.vim'
   Plug 'vim-airline/vim-airline'
-  Plug 'unblevable/quick-scope'
-  Plug 'JamshedVesuna/vim-markdown-preview'
-  Plug 'Kachyz/vim-gitmoji'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
   " ---------------------------------------
   "            Code Quality
   " ---------------------------------------
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'Shougo/neosnippet.vim'
   Plug 'honza/vim-snippets'
-  Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'sheerun/vim-polyglot'
   Plug 'tmhedberg/SimpylFold'
   Plug 'tpope/vim-commentary'
   " ---------------------------------------
@@ -47,10 +43,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ap/vim-buftabline'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
   Plug 'junegunn/fzf.vim'
-  Plug 'liuchengxu/vista.vim'
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'mbbill/undotree', { 'on': [ 'UndotreeToggle' ] }
   Plug 'ryanoasis/vim-devicons'
+  Plug 'kkoomen/vim-doge'
+
+
 call plug#end()
 
 " Automatically install missing plugins on startup

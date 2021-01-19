@@ -2,12 +2,12 @@ set updatetime=300
 
 let g:coc_global_extensions = [
     \ 'coc-actions',
-    \ 'coc-bookmark',
     \ 'coc-css',
     \ 'coc-diagnostic',
+    \ 'coc-dictionary',
     \ 'coc-docker',
     \ 'coc-emmet',
-    \ 'coc-emoji',
+    \ 'coc-elixir',
     \ 'coc-eslint',
     \ 'coc-git',
     \ 'coc-highlight',
@@ -19,16 +19,18 @@ let g:coc_global_extensions = [
     \ 'coc-neosnippet',
     \ 'coc-pairs',
     \ 'coc-pyright',
-    \ 'coc-python',
     \ 'coc-sh',
     \ 'coc-snippets',
     \ 'coc-tag',
-    \ 'coc-utils',
+    \ 'coc-toml',
     \ 'coc-vimlsp',
+    \ 'coc-word',
     \ 'coc-yaml',
     \ 'coc-yank',
     \ ]
-
+let g:coc_filetype_map = {
+  \ 'htmldjango': 'html',
+  \ }
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -36,7 +38,9 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -48,9 +52,6 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:coc_snippet_next = '<C-R>'
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -72,12 +73,13 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -110,69 +112,14 @@ omap af <Plug>(coc-funcobj-a)
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
-" Add `:Format` command to format current buffer." Explorer
-"let g:coc_explorer_global_presets = {
-"\   'floating': {
-"\      'position': 'floating',
-"\   },
-"\   'floatingLeftside': {
-"\      'position': 'floating',
-"\      'floating-position': 'left-center',
-"\      'floating-width': 30,
-"\   },
-"\   'floatingRightside': {
-"\      'position': 'floating',
-"\      'floating-position': 'right-center',
-"\      'floating-width': 30,
-"\   },
-"\   'simplify': {
-"\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-"\   }
-"\ }
-""nmap <silent> <space>e :CocCommand explorer<CR>
-"" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-"" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
 "autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-" command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-
-"" Explorer
-"let g:coc_explorer_global_presets = {
-"\   'floating': {
-"\      'position': 'floating',
-"\   },
-"\   'floatingLeftside': {
-"\      'position': 'floating',
-"\      'floating-position': 'left-center',
-"\      'floating-width': 30,
-"\   },
-"\   'floatingRightside': {
-"\      'position': 'floating',
-"\      'floating-position': 'right-center',
-"\      'floating-width': 30,
-"\   },
-"\   'simplify': {
-"\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-"\   }
-"\ }
-""nmap <silent> <space>e :CocCommand explorer<CR>
-"" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-"" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-"nmap <silent><F2> :CocCommand explorer<CR>
-
-" Example configuration
-nmap <silent><F9> <Plug>(coc-bookmark-toggle)
-nmap <silent><F10> <Plug>(coc-bookmark-annotate)
-nmap <silent><F11> <Plug>(coc-bookmark-next)
-nmap <silent><F12> :CocList bookmark <CR>
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -192,7 +139,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Show all diagnostics.
 nnoremap <silent><F8> :<C-u>CocList diagnostics<cr>
 " Show commands.
-nnoremap <silent><F7> :<C-u>CocList commands<cr>
+nnoremap <silent><F7> :<C-u>CocList <cr>
 
 nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
 nmap <silent> <C-j> <Plug>(coc-diagnostic-next)

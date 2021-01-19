@@ -1,7 +1,7 @@
 font:
-  size: 13.9
+  size: 14.0
   normal:
-    family: Iosevka Term
+    family: Iosevka Nerd Font
     # family: Inconsolata LGC
     # family: FiraCode Nerd Font
     # family: Iosevka Nerd Font
@@ -15,8 +15,8 @@ window:
     lines: 24
 
   padding:
-    x: 5
-    y: 5
+    x: 2
+    y: 2
 schemes:
   tokyo-night: &tokyo-night
     # Default colors
@@ -73,10 +73,34 @@ schemes:
       magenta: '0xbb9af7'
       cyan:    '0x0db9d7'
       white:   '0xacb0d0'
+
+  daycula: &daycula
+    primary:
+      background: '0x1a1d45'
+      foreground: '0xd7b7bb'
+    normal:
+      black: '0x1a1d45'
+      red: '0xff4ea5'
+      green: '0x7eb564'
+      yellow: '0xeaad64'
+      blue: '0x7a89ec'
+      magenta: '0xb66cdc'
+      cyan: '0x6cac99'
+      white: '0xd7b7bb'
+    bright:
+      black: '0x323884'
+      red: '0xff4ea5'
+      green: '0x7eb564'
+      yellow: '0xeaad64'
+      blue: '0x7a89ec'
+      magenta: '0xb66cdc'
+      cyan: '0x6cac99'
+      white: '0xd7b7bb'
 env:
   TERM: xterm-256color
 # colors:
-colors: *tokyo-night-storm
+# colors: *tokyo-night-storm
+colors: *daycula
   # primary:
   #   background: "0x2b2d3a"
   #   foreground: "0xe1e3e4"

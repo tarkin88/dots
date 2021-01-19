@@ -41,11 +41,11 @@ nnoremap <silent> <M-Right> :bnext<CR>
 nnoremap <silent> <M-Left> :bprevious<CR>
 nnoremap <silent> <M-Down> :bd<CR>
 
-" Make an new habit1
-"map <Left> <Nop>
-"map <Right> <Nop>
-"map <Up> <Nop>
-"map <Down> <Nop>
+" Make an new habit
+" map <Left> <Nop> 
+" map <Right> <Nop>
+" map <Up> <Nop>
+" map <Down> <Nop>
 
 " Use the space key to toggle folds
 nnoremap <space> za
