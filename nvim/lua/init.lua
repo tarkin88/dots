@@ -1,5 +1,0 @@
-require "_lspconfig"
-require "_completion"
-require "_diagnostic"
-require "_formatter"
-require "_treesitter"
