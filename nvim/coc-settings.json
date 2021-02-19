@@ -1,0 +1,65 @@
+{
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+  "suggest.enablePreview": true,
+  "suggest.timeout": 800,
+  "suggest.floatEnable": true,
+  "suggest.maxPreviewWidth": 200,
+  "diagnostic.enableSign": true,
+  "diagnostic.format": "[%severity] %message [%source%code] ",
+  "diagnostic.errorSign": "✗ ",
+  "diagnostic.warningSign": "▲ ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.hintSign": " ",
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.refreshOnInsertMode": true,
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elixir",
+    "graphql",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "vue"
+  ],
+  "coc.preferences.hoverTarget": "float",
+  "eslint.autoFixOnSave": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/snips"
+  ],
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "coc.source.around.enable": true,
+  "html.enable": true,
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "django",
+    "htmldjango"
+  ],
+  "html.format.enable": true,
+  "git.addGBlameToVirtualText": true,
+  "git.showCommitInFloating": true,
+  "git.addGBlameToBufferVar": true,
+  "git.addedSign.text": "▎",
+  "git.changedSign.text": "▎",
+  "git.topRemovedSign.text": "契",
+  "git.removedSign.text": "契",
+  "python.linting.prospectorEnabled": true,
+  "python.formatting.provider": "yapf",
+  "python.analysis.typeCheckingMode": "off",
+  "list.source.tags.command": "ctags -R ."
+}

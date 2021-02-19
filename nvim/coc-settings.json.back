@@ -1,0 +1,89 @@
+{
+  // suggestions
+  // "suggest.echodocSupport": true,
+  // TODO add more labels and give them cool glyphs
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+  "suggest.enablePreview": true,
+  "suggest.timeout": 800,
+  "suggest.floatEnable": true,
+  "suggest.maxPreviewWidth": 100,
+  // diagnostics
+  "diagnostic.enableSign": true,
+  "diagnostic.format": "[%severity] %message [%source%code] ",
+  "diagnostic.errorSign": "✗ ",
+  "diagnostic.warningSign": "▲ ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.hintSign": " ",
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.refreshOnInsertMode": true,
+  // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
+  // codelens TODO what does this get me?
+  // "codeLens.enable": true,
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+  // "prettier.eslintIntegration": true,
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elixir",
+    "graphql",
+    "html",
+    "javascript",
+    "json",
+    "json",
+    "markdown",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "vue"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
+  /* "python.linting.enabled": true, */
+  "python.formatting.provider": "yapf",
+  "python.linting.prospectorEnabled": true,
+  /* "python.linting.prospectorPath": "~/.envs/neovim/bin/prospector", */
+  "python.linting.prospectorArgs": [
+    "--uses django"
+  ],
+  /* "python.linting.pylintEnabled": false, */
+  /* "python.formatting.yapfPath": "~/.envs/neovim/bin/yapf", */
+  /* "python.analysis.diagnosticSeverityOverrides": { */
+  /*   "reportGeneralTypeIssues": "none" */
+  /* }, */
+  "python.analysis.typeCheckingMode": "off",
+  "eslint.autoFixOnSave": true,
+  // snippets
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/snips"
+  ],
+  //"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+  // emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "coc.source.around.enable": true,
+  "html.enable": true,
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "django",
+    "htmldjango"
+  ],
+  "html.format.enable": true,
+  "git.addGBlameToVirtualText": true,
+  "git.showCommitInFloating": true,
+  "git.addGBlameToBufferVar": true,
+  "git.addedSign.text": "▎",
+  "git.changedSign.text": "▎",
+  "git.topRemovedSign.text": "契",
+  "git.removedSign.text": "契"
+}
