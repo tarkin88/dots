@@ -60,6 +60,7 @@
   "git.removedSign.text": "契",
   "python.linting.prospectorEnabled": true,
   "python.formatting.provider": "yapf",
-  "python.analysis.typeCheckingMode": "off",
+  "pyright.organizeimports.provider": "isort",
+  /* "python.analysis.typeCheckingMode": "off", */
   "list.source.tags.command": "ctags -R ."
 }

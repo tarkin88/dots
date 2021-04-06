@@ -25,7 +25,7 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set relativenumber                      " Show relative line numbers
 
   set cursorline                          " Enable highlighting of the current line
-  " set cursorcolumn                        " Enable highlighting of the current column
+  set cursorcolumn                        " Enable highlighting of the current column
   set background=dark                     " tell vim what the background color looks like
   set noshowmode                          " We don't need to see things like -- INSERT -- anymore
   set nobackup                            " This is recommended by coc
@@ -46,6 +46,13 @@ set formatoptions-=cro                  " Stop newline continution of comments
   set autochdir                           " Your working directory will always be the same as your working directory
   set colorcolumn=120
   set inccommand=nosplit
+
+  set ttyfast
+  set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
+" set matchpairs+=<:> " use % to jump between pairs
+" set path=$PWD/**        " enable fuzzy finding in the vim command line
+" set wildmenu            " enable fuzzy menu
+" set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
 
   " Providers
   let g:python3_host_prog  = '~/.envs/neovim/bin/python'

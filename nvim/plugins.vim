@@ -10,10 +10,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " ---------------------------------------
 "            Colors
 " ---------------------------------------
-  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
   " Plug 'ghifarit53/daycula-vim' , {'branch' : 'main'}
   " Plug 'sainnhe/forest-night'
-  Plug 'sainnhe/sonokai'
+  " Plug 'franbach/miramare'
+  Plug 'nvim-treesitter/nvim-treesitter' 
+  " Plug 'sainnhe/sonokai'
+  Plug 'b4skyx/serenade'
   " Plug 'sainnhe/edge'
 " ---------------------------------------
 "            General stuff
@@ -23,8 +26,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kristijanhusak/vim-carbon-now-sh'
   Plug 'vim-airline/vim-airline'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-  Plug 'kassio/neoterm'
+  " Plug 'kassio/neoterm'
   Plug 'mhinz/vim-startify'
+  Plug 'tpope/vim-surround'
 
   " ---------------------------------------
   "            Code Quality
@@ -48,7 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'ryanoasis/vim-devicons'
   Plug 'kkoomen/vim-doge'
-  Plug 'junegunn/goyo.vim'
+  " Plug 'junegunn/goyo.vim'
 
 
 call plug#end()
